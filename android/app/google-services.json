@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "362137392712",
+    "project_id": "gwele-ae9c2",
+    "storage_bucket": "gwele-ae9c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362137392712:android:00501648d899c6acf4aa7d",
+        "android_client_info": {
+          "package_name": "com.odk.gestion_reunion_tache"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD67Khg2d1hywG_BCHa-46nHvHtZBCv-Qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
