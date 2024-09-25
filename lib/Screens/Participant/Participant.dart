@@ -1,14 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Manager extends StatefulWidget {
-  //Apprenant({required Key key}) : super(key: key);
-
+class Participant extends StatefulWidget {
   @override
-  ManagerState createState() => ManagerState();
+  ParticipantState createState() => ParticipantState();
 }
 
-class ManagerState extends State<Manager> {
+class ParticipantState extends State<Participant> {
   int _selectedIndex = 0; // Index pour suivre l'élément sélectionné
 
   // Liste des widgets pour chaque page

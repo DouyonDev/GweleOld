@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gestion_reunion_tache/Screens/Admin/Admin.dart';
 import 'package:gestion_reunion_tache/Screens/Manager/Manager.dart';
 
 import '../Models/Utilisateur.dart';
 import '../Screens/Widgets/message_modale.dart';
-import '../Screens/aide_support.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -38,10 +38,9 @@ class AuthService {
         // Rediriger en fonction du rôle de l'utilisateur
         if (utilisateur.role == 'ADMIN') {
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-                builder: (context) => AideSupport()), // Page pour admin
+            MaterialPageRoute(builder: (context) => Admin()), // Page pour admin
           );
-        } else {
+        } else if (utilisateur.role == 'MANAGER') {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
                 builder: (context) =>
@@ -80,42 +79,4 @@ class AuthService {
     return null;
   }
 
-  // Méthode pour soumettre le formulaire de connexion
-  Future<void> boutonConnexion(GlobalKey<FormState> formKey, String email,
-      String password, BuildContext context) async {
-    final isValid = formKey.currentState?.validate();
-    if (isValid != null && isValid) {
-      formKey.currentState?.save();
-      try {
-        Utilisateur? utilisateur =
-            await connexionAvecPassword(email, password, context);
-
-        if (utilisateur != null) {
-          // Afficher un message de succès
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MessageModale(
-                title: "Succès",
-                content: "Connexion réussie",
-              );
-            },
-          );
-        }
-      } catch (e) {
-        // Gérer les erreurs et afficher une modale d'erreur
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return const MessageModale(
-              title: "Erreur",
-              content: "Problème lors de la connexion.",
-            );
-          },
-        );
-        print("le probleme est : ");
-        print(e);
-      }
-    }
-  }
 }

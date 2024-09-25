@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestion_reunion_tache/Colors.dart';
+import 'package:gestion_reunion_tache/Services/BoutonService.dart';
 
 import '../Services/AuthService.dart';
 
@@ -15,7 +16,7 @@ class LoginScreenState extends State<LoginScreen> {
   bool _obscureText = true;
 
   // Appel du service d'authentification
-  final AuthService _authService = AuthService();
+  final BoutonService boutonService = BoutonService();
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +108,7 @@ class LoginScreenState extends State<LoginScreen> {
                     ElevatedButton(
                       onPressed: () {
                         // Appel au service pour soumettre le formulaire
-                        _authService.boutonConnexion(
+                        boutonService.boutonConnexion(
                           _formKey,
                           _email,
                           _password,

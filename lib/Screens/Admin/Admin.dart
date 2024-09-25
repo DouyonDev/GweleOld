@@ -1,20 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gestion_reunion_tache/Screens/Admin/ajout_Manager.dart';
+import 'package:gestion_reunion_tache/Screens/Lead/ajout_reunion.dart';
 
-class Manager extends StatefulWidget {
+class Admin extends StatefulWidget {
   //Apprenant({required Key key}) : super(key: key);
 
   @override
-  ManagerState createState() => ManagerState();
+  AdminState createState() => AdminState();
 }
 
-class ManagerState extends State<Manager> {
+class AdminState extends State<Admin> {
   int _selectedIndex = 0; // Index pour suivre l'élément sélectionné
 
   // Liste des widgets pour chaque page
   static final List<Widget> _pages = <Widget>[
-    //TicketsResoluTout(),
-    //MesTickets(),
+    AjoutReunion(),
+    AjoutManager(),
     //DiscussionsPage(userId: FirebaseAuth.instance.currentUser!.uid),
     //Profil(),
   ];

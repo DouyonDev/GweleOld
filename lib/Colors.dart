@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const Color backgroundColor = Color(0xFFF3EBCD);
 const Color primaryColor = Color(0xFF26A7F0);
 const Color secondaryColor = Colors.black;
+const Color thirdColor = Colors.white;
 
 // Tu peux aussi utiliser des nuances
 const MaterialColor customBlue = MaterialColor(

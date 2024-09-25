@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AffichageTicket extends StatelessWidget {
-  final Map<String, dynamic> ticketData;
+  final Map<String, dynamic> reunionData;
 
-  AffichageTicket({required this.ticketData});
+  AffichageTicket({required this.reunionData});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class AffichageTicket extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => TicketDetail(ticketData: ticketData),
+            builder: (context) => TicketDetail(reunionData: reunionData),
           ),
         );*/
       },
@@ -47,7 +47,7 @@ class AffichageTicket extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                ticketData['categorie'] ?? 'Sans catégorie',
+                reunionData['categorie'] ?? 'Sans catégorie',
                 style: const TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -56,7 +56,7 @@ class AffichageTicket extends StatelessWidget {
               ),
               const SizedBox(height: 8.0),
               Text(
-                ticketData['titre'] ?? 'Sans titre',
+                reunionData['titre'] ?? 'Sans titre',
                 style: const TextStyle(
                   fontSize: 16.0,
                   color: Colors.grey,
@@ -66,7 +66,7 @@ class AffichageTicket extends StatelessWidget {
               ),
               const Divider(),
               Text(
-                ticketData['description'] ?? 'Pas de description disponible',
+                reunionData['description'] ?? 'Pas de description disponible',
                 style: TextStyle(
                   fontSize: 14.0,
                   color: Colors.grey[700],
@@ -79,18 +79,18 @@ class AffichageTicket extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Date Ajout: ${ticketData['created_at'] != null ? (ticketData['created_at'] as Timestamp).toDate().toLocal().toString().split(' ')[0] : 'Date non disponible'}',
+                    'Date Ajout: ${reunionData['created_at'] != null ? (reunionData['created_at'] as Timestamp).toDate().toLocal().toString().split(' ')[0] : 'Date non disponible'}',
                     style: TextStyle(
                       fontSize: 12.0,
                       color: Colors.grey[600],
                     ),
                   ),
                   Text(
-                    'Statut : ${ticketData['statut'] ?? 'Statut inconnu'}',
+                    'Statut : ${reunionData['statut'] ?? 'Statut inconnu'}',
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.bold,
-                      color: ticketData['statut'] == 'resolu'
+                      color: reunionData['statut'] == 'resolu'
                           ? Colors.green
                           : Colors.red,
                     ),
