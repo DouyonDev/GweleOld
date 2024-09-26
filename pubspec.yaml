@@ -37,9 +37,10 @@ dependencies:
   firebase_storage: ^12.3.1
   flutter_speed_dial: ^7.0.0
   file_picker: ^8.1.2
+  fl_chart: ^0.69.0
 
-firebase_auth:
-  loggingEnabled: true
+#firebase_auth:
+  #loggingEnabled: true
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -49,8 +50,8 @@ firebase_auth:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.13.1
-  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
+  flutter_lints: ^5.0.0
 
 flutter_icons:
   android: true
@@ -62,7 +63,7 @@ flutter_icons:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

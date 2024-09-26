@@ -15,13 +15,37 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, // Enlever le bandeau "DEBUG"
-      theme: ThemeData(
-        primaryColor: primaryColor, // Couleur principale
-        hintColor: secondaryColor, // Couleur d'accent
-      ),
-      home: Bienvenue(),
+    return FutureBuilder(
+      future: Firebase.initializeApp(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(), // Affiche un indicateur de chargement pendant l'initialisation
+              ),
+            ),
+          );
+        }
+        if (snapshot.hasError) {
+          return const MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: Text('Erreur lors de l\'initialisation de Firebase'), // Affiche un message d'erreur
+              ),
+            ),
+          );
+        }
+        // Si tout va bien, l'application démarre normalement
+        return MaterialApp(
+          debugShowCheckedModeBanner: false, // Enlever le bandeau "DEBUG"
+          theme: ThemeData(
+            primaryColor: primaryColor, // Couleur principale
+            hintColor: secondaryColor,  // Couleur d'accent
+          ),
+          home: Bienvenue(),  // Ecran de bienvenue
+        );
+      },
     );
   }
 }

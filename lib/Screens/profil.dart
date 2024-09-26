@@ -7,7 +7,7 @@ import 'package:gestion_reunion_tache/Screens/password_change.dart';
 import 'aide_support.dart';
 import 'apropos.dart';
 import 'authentication_screen.dart';
-import 'modification_apprenant.dart';
+import 'modification_compte.dart';
 
 class Profil extends StatelessWidget {
   @override
@@ -101,7 +101,7 @@ class Profil extends StatelessWidget {
                           // Action lors du clic sur le bouton crayon
                           // Naviguer vers la page de modification du profil
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ModificationApprenant()
+                            builder: (context) => ModificationCompte()
                           ));
                         },
                       ),
@@ -120,7 +120,7 @@ class Profil extends StatelessWidget {
                         onTap: () {
                           // Action lors du clic sur "Compte"
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ModificationApprenant()
+                              builder: (context) => ModificationCompte()
                           ));
                         },
                       ),
