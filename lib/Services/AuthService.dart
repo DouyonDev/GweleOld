@@ -44,7 +44,7 @@ class AuthService {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
                 builder: (context) =>
-                    Manager()), // Page pour utilisateurs non-admin
+                    Manager()),
           );
         }
 

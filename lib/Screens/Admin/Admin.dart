@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gestion_reunion_tache/Screens/Admin/ajout_Manager.dart';
 import 'package:gestion_reunion_tache/Screens/Lead/ajout_reunion.dart';
 
+import '../profil.dart';
+
 class Admin extends StatefulWidget {
   //Apprenant({required Key key}) : super(key: key);
 
@@ -17,8 +19,8 @@ class AdminState extends State<Admin> {
   static final List<Widget> _pages = <Widget>[
     AjoutReunion(),
     AjoutManager(),
-    //DiscussionsPage(userId: FirebaseAuth.instance.currentUser!.uid),
-    //Profil(),
+    AjoutManager(),
+    Profil(),
   ];
 
   // Méthode pour changer de page

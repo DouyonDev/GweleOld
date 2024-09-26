@@ -1,14 +1,9 @@
-import 'dart:io';
 
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:gestion_reunion_tache/Models/Tache.dart';
 import 'package:gestion_reunion_tache/Services/BoutonService.dart';
 import 'package:gestion_reunion_tache/Services/FichiersService.dart';
-import '../../Models/Reunion.dart';
-import '../../Services/ReunionService.dart';
-import '../../Colors.dart'; // Assurez-vous d'avoir ce fichier Colors.dart
+import '../../Colors.dart';
 
 class AjoutReunion extends StatefulWidget {
   @override

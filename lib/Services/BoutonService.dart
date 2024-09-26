@@ -20,7 +20,7 @@ class BoutonService {
   final ReunionService reunionService = ReunionService();
   final FichiersService fichiersService = FichiersService();
 
-  // Méthode pour soumettre le formulaire de connexion
+  // Bouton pour soumettre le formulaire de connexion
   Future<void> boutonConnexion(GlobalKey<FormState> formKey, String email,
       String password, BuildContext context) async {
     final isValid = formKey.currentState?.validate();
@@ -59,6 +59,7 @@ class BoutonService {
     }
   }
 
+  //Bouton pour enregistrer un manager
   Future<void> BtnAjouterManager(GlobalKey<FormState> formKey,
       BuildContext context, String prenom, String nom, String email) async {
     final isValid = formKey.currentState?.validate();
@@ -163,6 +164,7 @@ class BoutonService {
   //Bouton pour uploader  les documents
   Future<List<String>> selectionnerEtUploaderFichier(
       BuildContext context, List<String> documents) async {
+
     String nomFichier = await fichiersService.selectionnerFichier();
 
     if (nomFichier.isNotEmpty && nomFichier != 'Aucun fichier selectionné') {

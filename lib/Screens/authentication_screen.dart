@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gestion_reunion_tache/Colors.dart';
 import 'package:gestion_reunion_tache/Services/BoutonService.dart';
 
-import '../Services/AuthService.dart';
-
 class LoginScreen extends StatefulWidget {
   @override
   LoginScreenState createState() => LoginScreenState();
